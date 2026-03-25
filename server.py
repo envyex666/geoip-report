@@ -4,11 +4,11 @@ import uvicorn
 
 app = FastAPI()
 
-@app.post("/client-data")
+@app.post("/report")
 def get_ip(request: Request):
     client_host = request.client.host
 
     with geoip2.database.Reader('db/GeoLite2-Country.mmdb') as reader:
         response = reader.country(client_host)
-        print('IP:', client_host, '\nCountry_Code:', response.country.iso_code, '\nCountry_name:', response.country.name)
+        print(f'recieved_report ', 'IP:', client_host, 'Country_Code:', response.country.iso_code, 'Country_name:', response.country.name)
     return {"status": "OK"}
