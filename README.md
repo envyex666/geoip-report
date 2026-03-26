@@ -1,6 +1,6 @@
-#App for making geoip reports
+# App for making geoip reports
 
-##QUICK START
+## QUICK START
 ```bash
 cd scripts && chmod +x quick_start.sh && ./quick_start.sh
 ```
