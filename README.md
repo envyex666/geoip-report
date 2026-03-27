@@ -3,27 +3,23 @@
 
 ## QUICK START
 
-### add your token in .env
-```bash
-echo "SECRET_TOKEN=secret_example" > .env
-```
-### make python virtual enviroments
+make python virtual enviroments
 ```bash
 python3 -m venv venv
 ```
-### activate your venv
+activate your venv
 ```bash
 source venv/bin/activate
 ```
-### install requirements
+install requirements
 ```bash
 pip install -r requirements/requirements.txt
 ```
-### go to src dir and start your server
+go to src dir and start your server
 ```bash
-cd src && uvicorn server:app --host 0.0.0.0 --port 8081
+SECRET_TOKEN="123" uvicorn server:app --host 0.0.0.0 --port 8081
 ```
 ## Request example
 ```bash
-curl -X POST "http://SERVER_IP:SERVER_PORT/report"   -H "Authorization: YOUR_TOKEN"
+curl -X POST -H "AUTH_TOKEN: <YOUR_TOKEN>" "http://<SERVER_IP>:<SERVER_PORT>/report"
 ```
