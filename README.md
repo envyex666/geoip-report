@@ -1,25 +1,20 @@
-# GEOIP REPORTS
-## App for making geoip reports from requests by clients
+# geoip reports
+## description
+App for making geoip reports from requests by clients.
 
-## QUICK START
-
-make python virtual enviroments
+## Quick start
+prepare python virtual enviroments
 ```bash
 python3 -m venv venv
-```
-activate your venv
-```bash
 source venv/bin/activate
-```
 install requirements
-```bash
-pip install -r requirements/requirements.txt
+pip install -r requirements.txt
 ```
-go to src dir and start your server
+start your server
 ```bash
-SECRET_TOKEN="123" uvicorn server:app --host 0.0.0.0 --port 8081
+SECRET_TOKEN="123" uvicorn server:app --host 127.0.0.1 --port 8081 --app-dir src/
 ```
 ## Request example
 ```bash
-curl -X POST -H "AUTH_TOKEN: <YOUR_TOKEN>" "http://<SERVER_IP>:<SERVER_PORT>/report"
+curl -X POST -H "AUTH_TOKEN: <YOUR_TOKEN>" "http://127.0.0.1:8081/report"
 ```
