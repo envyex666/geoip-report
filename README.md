@@ -2,7 +2,7 @@
 ### description
 App for making geoip reports from requests by clients.
 
-## Quick start
+## quick start
 prepare python virtual enviroments
 ```bash
 python3 -m venv venv
@@ -14,7 +14,7 @@ start your server
 ```bash
 SECRET_TOKEN="123" uvicorn server:app --host 127.0.0.1 --port 8081 --app-dir src/
 ```
-## Request example
+## request example
 ```bash
 curl -X POST -H "AUTH_TOKEN: 123" "http://127.0.0.1:8081/report"
 ```
